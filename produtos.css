@@ -1,1 +1,101 @@
-﻿
+﻿header {
+    background: #BBBBBB;
+
+    /* Espaçamento interno para que nada que tenha dentro do header fique colado na
+    margem de cima e debaixo, para que possa ter esse respiro. */
+    padding: 20px 0;
+}
+
+/* Isso é feito para centralizar o conteúdo do header. Como a maioria dos
+monitores tem 1260 px de largura, é usado como um bom padrão 940 px para
+essa caixa. Para que o 'nav' com 'position: absolute' passe a ter como referência
+não o topo da página mas sim essa caixa em que ele está contido, eu faço a
+caixa levantar usando 'position: relative'. */
+
+.caixa {
+    position: relative;
+    width: 940px;
+
+    /* isso é feito para centralizar a caixa, independente do tamanho do monitor,
+    mantendo as margens superior e inferior em '0' e as margens direita e esquerda
+    automáticas. Delegamos para o navegador fazer a conta de calcular a largura que
+    resta, dividir por dois, e adicionar metade em cada um dos lados. */
+    margin: 0 auto;
+}
+
+/* O menu de navegação 'nav' tem 'position: absolute' para que ele passa e ter como
+sua referência inicial o canto superior esquerdo da página. Essa referência inicial
+é alterada novamente para ter como referência a caixa que foi criada para colocar ele
+dentro ao colocar 'position: relative' na caixa em que ele está contido. Ele passa a
+ser absoluto em relação a essa caixa relativa. E ainda, todo elemento é criado e mantém
+sua posição natural em que ele foi criado, colado no bloco do elemento anterior do html,
+ou seja eles são 'position: static', ele não pode ser movimentado assim. Para que ele
+possa ser movimentado, tendo como referência esse mesmo ponto inicial no canto superior
+esquerdo quando ele era static, altera-se ele para 'position: relative'. Para movimentá-lo,
+usa-se as propriedades top, right, bottom e left. */
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+/* O elemento 'li' é naturalmente um 'block', ou seja, ocupa toda a largura da página.
+Para mudar isso alteramos sua propriedade para 'display: inline', fazendo os elementos
+'li' ficarem um ao lado do outro. */
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+/* Classe aplicada ao elemnto ul daa lista complexa pra centralizar os elemntos filhos.
+É como uma caixa, tipo um conteiner.  */
+
+.produtos {
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/* Já vimos a exibição do elemento como inline, quando a gente quer que ele exiba somente
+o tamanho do conteúdo dele ou o inline block, por padrão, ele vai exibir a largura do
+conteúdo dele, mas ainda podemos alterar esse tamanho, e ele vai ficar um do lado do outro. */
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+
+    /* Quando uso 'padding' o elemento aumenta o seu tamanho. Quando declaro que existe um 
+    espaçamento interno, estou aumentando o conteúdo. Para que o espaçamento interno já esteja 
+    contabilizado nos 30% de largura, e o seu tamanho não aumente, eu utilizo 
+    'box-sizing: border-box'. */
+    box-sizing: border-box;
+}
+
+.produtos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
