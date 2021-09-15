@@ -54,10 +54,19 @@ nav a {
     color: #000000;
     font-weight: bold;
     font-size: 22px;
+
+    /* para tirar aquela decoração padrão do link - o sublinhado */
     text-decoration: none;
 }
 
-/* Classe aplicada ao elemnto ul daa lista complexa pra centralizar os elemntos filhos.
+/* Pseudo-classe de estado 'hover' - comportamento quando o mouse
+estiver por cima dos links dentro do menu de navegação */
+nav a:hover {
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+/* Classe aplicada ao elemento ul da lista complexa pra centralizar os elemntos filhos.
 É como uma caixa, tipo um conteiner.  */
 
 .produtos {
@@ -78,11 +87,35 @@ conteúdo dele, mas ainda podemos alterar esse tamanho, e ele vai ficar um do la
     margin: 0 1.5%;
     padding: 30px 20px;
 
-    /* Quando uso 'padding' o elemento aumenta o seu tamanho. Quando declaro que existe um 
-    espaçamento interno, estou aumentando o conteúdo. Para que o espaçamento interno já esteja 
-    contabilizado nos 30% de largura, e o seu tamanho não aumente, eu utilizo 
+    /* as três características fundamentais de uma borda:
+        border-color: #000000;
+        border-width: 2px;
+        border-style: solid; */
+    border: 2px solid #000000;
+
+    /* raio do círculo que é usado para o navegador renderizar a borda */
+    border-radius: 10px;
+
+    /* Quando uso 'padding' o elemento aumenta o seu tamanho. Quando declaro que existe um
+    espaçamento interno, estou aumentando o conteúdo. Para que o espaçamento interno já esteja
+    contabilizado nos 30% de largura, e o seu tamanho não aumente, eu utilizo
     'box-sizing: border-box'. */
     box-sizing: border-box;
+}
+
+.produtos li:hover {
+    border-color: #C78C19;    
+}
+
+/* A pseudo-classe de estado 'active' determina o comportamento do elemento enquanto
+o botao esquerdo do mouse estiver pressionado sobre o elemento. */
+.produtos li:active {
+    border-color: #088C19;
+}
+
+/* Altera o comportamento do 'h2' dentro de 'li' quando o mouse está por cima de 'li' */
+.produtos li:hover h2 {
+    font-size: 34px;
 }
 
 .produtos h2 {
@@ -98,4 +131,24 @@ conteúdo dele, mas ainda podemos alterar esse tamanho, e ele vai ficar um do la
     font-size: 22px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+
+    /* CSS permite usar uma imagem pequena de background e ele automaticamente 
+    replica ela até preencher todo o fundo, o que é melhor do que colocar uma imagem
+    grande, o que gasta mais banda de internet para carregar. */
+    background: url("bg.jpg");
+
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+
+    /* Com três valores, o primeiro é a top margin, o segundo é a right and left margin
+    e o terceiro é a bottom margin. */
+    margin: 20px 0 0;
 }
