@@ -1,10 +1,14 @@
-﻿header {
-  background: #bbbbbb;
-
-  /* Espaçamento interno para que nada que tenha dentro do header fique colado na
-    margem de cima e debaixo, para que possa ter esse respiro. */
-  padding: 20px 0;
+﻿body {
+    font-family: 'Montserrat', sans-serif;
 }
+
+header {
+    background: #bbbbbb;
+    /* Espaçamento interno para que nada que tenha dentro do header fique colado na
+    margem de cima e debaixo, para que possa ter esse respiro. */
+    padding: 20px 0;
+}
+
 
 /* Isso é feito para centralizar o conteúdo do header. Como a maioria dos
 monitores tem 1260 px de largura, é usado como um bom padrão 940 px para
@@ -13,15 +17,15 @@ não o topo da página mas sim essa caixa em que ele está contido, eu faço a
 caixa levantar usando 'position: relative'. */
 
 .caixa {
-  position: relative;
-  width: 940px;
-
-  /* isso é feito para centralizar a caixa, independente do tamanho do monitor,
+    position: relative;
+    width: 940px;
+    /* isso é feito para centralizar a caixa, independente do tamanho do monitor,
     mantendo as margens superior e inferior em '0' e as margens direita e esquerda
     automáticas. Delegamos para o navegador fazer a conta de calcular a largura que
     resta, dividir por dois, e adicionar metade em cada um dos lados. */
-  margin: 0 auto;
+    margin: 0 auto;
 }
+
 
 /* O menu de navegação 'nav' tem 'position: absolute' para que ele passa e ter como
 sua referência inicial o canto superior esquerdo da página. Essa referência inicial
@@ -35,216 +39,275 @@ esquerdo quando ele era static, altera-se ele para 'position: relative'. Para mo
 usa-se as propriedades top, right, bottom e left. */
 
 nav {
-  position: absolute;
-  top: 110px;
-  right: 0;
+    position: absolute;
+    top: 110px;
+    right: 0;
 }
+
 
 /* O elemento 'li' é naturalmente um 'block', ou seja, ocupa toda a largura da página.
 Para mudar isso alteramos sua propriedade para 'display: inline', fazendo os elementos
 'li' ficarem um ao lado do outro. */
 
 nav li {
-  display: inline;
-  margin: 0 0 0 15px;
+    display: inline;
+    margin: 0 0 0 15px;
 }
 
 nav a {
-  text-transform: uppercase;
-  color: #000000;
-  font-weight: bold;
-  font-size: 22px;
-
-  /* para tirar aquela decoração padrão do link - o sublinhado */
-  text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    /* para tirar aquela decoração padrão do link - o sublinhado */
+    text-decoration: none;
 }
+
 
 /* Pseudo-classe de estado 'hover' - comportamento quando o mouse
 estiver por cima dos links dentro do menu de navegação */
+
 nav a:hover {
-  color: #c78c19;
-  text-decoration: underline;
+    color: #c78c19;
+    text-decoration: underline;
 }
+
 
 /* Classe aplicada ao elemento ul da lista complexa pra centralizar os elemntos filhos.
 É como uma caixa, tipo um conteiner.  */
 
 .produtos {
-  width: 940px;
-  margin: 0 auto;
-  padding: 50px 0;
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
 }
+
 
 /* Já vimos a exibição do elemento como inline, quando a gente quer que ele exiba somente
 o tamanho do conteúdo dele ou o inline block, por padrão, ele vai exibir a largura do
 conteúdo dele, mas ainda podemos alterar esse tamanho, e ele vai ficar um do lado do outro. */
 
 .produtos li {
-  display: inline-block;
-  text-align: center;
-  width: 30%;
-  vertical-align: top;
-  margin: 0 1.5%;
-  padding: 30px 20px;
-
-  /* as três características fundamentais de uma borda:
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    /* as três características fundamentais de uma borda:
         border-color: #000000;
         border-width: 2px;
         border-style: solid; */
-  border: 2px solid #000000;
-
-  /* raio do círculo que é usado para o navegador renderizar a borda */
-  border-radius: 10px;
-
-  /* Quando uso 'padding' o elemento aumenta o seu tamanho. Quando declaro que existe um
+    border: 2px solid #000000;
+    /* raio do círculo que é usado para o navegador renderizar a borda */
+    border-radius: 10px;
+    /* Quando uso 'padding' o elemento aumenta o seu tamanho. Quando declaro que existe um
     espaçamento interno, estou aumentando o conteúdo. Para que o espaçamento interno já esteja
     contabilizado nos 30% de largura, e o seu tamanho não aumente, eu utilizo
     'box-sizing: border-box'. */
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .produtos li:hover {
-  border-color: #c78c19;
+    border-color: #c78c19;
 }
+
 
 /* A pseudo-classe de estado 'active' determina o comportamento do elemento enquanto
 o botao esquerdo do mouse estiver pressionado sobre o elemento. */
+
 .produtos li:active {
-  border-color: #088c19;
+    border-color: #088c19;
 }
 
+
 /* Altera o comportamento do 'h2' dentro de 'li' quando o mouse está por cima de 'li' */
+
 .produtos li:hover h2 {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 .produtos h2 {
-  font-size: 30px;
-  font-weight: bold;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .produto-descricao {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .produto-preco {
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 footer {
-  text-align: center;
-
-  /* CSS permite usar uma imagem pequena de background e ele automaticamente 
+    text-align: center;
+    /* CSS permite usar uma imagem pequena de background e ele automaticamente
     replica ela até preencher todo o fundo, o que é melhor do que colocar uma imagem
     grande, o que gasta mais banda de internet para carregar. */
-  background: url("bg.jpg");
-
-  padding: 40px 0;
+    background: url("bg.jpg");
+    padding: 40px 0;
 }
 
 .copyright {
-  color: #ffffff;
-  font-size: 13px;
-
-  /* Com três valores, o primeiro é a top margin, o segundo é a right and left margin
+    color: #ffffff;
+    font-size: 13px;
+    /* Com três valores, o primeiro é a top margin, o segundo é a right and left margin
     e o terceiro é a bottom margin. */
-  margin: 20px 0 0;
+    margin: 20px 0 0;
 }
 
-main {
-  width: 940px;
-  margin: 0 auto;
+main {}
+
+.contato {
+    width: 940px;
+    margin: 20px auto;
 }
 
 form {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 
 form label,
 form legend {
-  display: block;
-  font-size: 20px;
-  margin: 0 0 10px;
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
 }
 
 .input-padrao {
-  display: block;
-  margin: 0 0 20px;
-  padding: 10px 25px;
-  width: 50%;
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
 }
 
 .checkbox {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .enviar {
-  width: 40%;
-  padding: 15px 0;
-  background: orange;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  transition: 1s all;
-  cursor: pointer;
+    width: 40%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
 }
 
 .enviar:hover {
-  background: darkorange;
-  transform: scale(1.2);
+    background: darkorange;
+    transform: scale(1.2);
 }
 
 table {
-  margin: 20px 40px;
+    margin: 20px 0;
 }
 
 thead {
-  background: #555555;
-  color: white;
-  font-weight: bold;
+    background: #555555;
+    color: white;
+    font-weight: bold;
 }
 
 td,
 th {
-  border: 1px solid #000000;
-  padding: 8px 15px;
+    border: 1px solid #000000;
+    padding: 8px 15px;
 }
 
+
 /* css da página inicial */
+
 .banner {
-  width: 100%;
+    width: 100%;
 }
 
 .titulo-principal {
-  text-align: center;
-  font-size: 2em;
-  margin: 0 0 1em;
-  /* limpa o float left dado em .utensílios que faz o titulo "Benefícios" subir */
-  clear: left;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    /* limpa o float left dado em .utensílios que faz o titulo "Benefícios" subir;
+  cria uma barreira ao float, dali pra baixo ele não tem efeito */
+    clear: left;
+}
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
 }
 
 .principal p {
-  margin: 0 0 1em;
+    margin: 0 0 1em;
+    line-height: 1.5;
 }
 
 .principal strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .principal em {
-  font-style: italic;;
+    font-style: italic;
 }
 
 .utensilios {
-  width: 120px;
-  float: left;
-  margin: 0 20px 20px 0;
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0;
 }
 
-.imagembeneficios {
-  width: 60%;
+.mapa {
+    padding: 3em 0;
+    background-image: linear-gradient(#FEFEFE, #DDDDDD);
+}
+
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 3em 0;
+    background: #DDDDDD;
+}
+
+.conteudo-beneficios {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.itens {
+    line-height: 1.5;
+}
+
+.itens:first-child {
+    font-weight: bold;
+}
+
+.imagem-beneficios {
+    width: 60%;
+}
+
+.video {
+    width: 560px;
+    margin: 2em auto;
 }
