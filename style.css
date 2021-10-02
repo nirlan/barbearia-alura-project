@@ -106,6 +106,7 @@ conteúdo dele, mas ainda podemos alterar esse tamanho, e ele vai ficar um do la
     contabilizado nos 30% de largura, e o seu tamanho não aumente, eu utilizo
     'box-sizing: border-box'. */
     box-sizing: border-box;
+    transition: 400ms border-color;
 }
 
 .produtos li:hover {
@@ -124,7 +125,8 @@ o botao esquerdo do mouse estiver pressionado sobre o elemento. */
 /* Altera o comportamento do 'h2' dentro de 'li' quando o mouse está por cima de 'li' */
 
 .produtos li:hover h2 {
-    font-size: 34px;
+    font-size: 31px;
+    transition: 400ms font-size;
 }
 
 .produtos h2 {
@@ -158,8 +160,6 @@ footer {
     e o terceiro é a bottom margin. */
     margin: 20px 0 0;
 }
-
-main {}
 
 .contato {
     width: 940px;
@@ -303,11 +303,65 @@ th {
     font-weight: bold;
 }
 
+.itens::before {
+    content: "🟊";
+}
+
 .imagem-beneficios {
     width: 60%;
+    opacity: 1;
+    transition: 400ms opacity;
+    box-shadow: 10px 10px 30px #000000;
+}
+
+.imagem-beneficios:hover {
+    opacity: 0.3;
 }
 
 .video {
     width: 560px;
     margin: 2em auto;
+}
+
+
+/* estilo visual que compreenda telas de até 480px */
+
+@media screen and (max-width: 480px) {
+    .caixa,
+    .principal,
+    .conteudo-beneficios,
+    .mapa-conteudo,
+    .video,
+    .contato {
+        width: auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    nav {
+        position: static;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .lista-beneficios,
+    .imagem-beneficios,
+    .input-padrao,
+    .enviar,
+    table {
+        width: 92%;
+    }
+    .input-padrao {
+        box-sizing: border-box;
+        margin: 0px 15px 10px;
+        padding: 4px;
+    }
+    form>label,
+    fieldset,
+    .checkbox,
+    .enviar {
+        margin-left: 15px;
+    }
+    table {
+        margin: 0 auto;
+    }
 }
